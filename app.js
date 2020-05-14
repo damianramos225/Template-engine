@@ -14,40 +14,45 @@ const axios = require("axios")
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-const questions = [
-    {
-        type: 'input',
-        message: "Enter your GitHub username:",
-        name: "username"
-    },
-    {
-        type: 'input',
-        message: "You will have one Manager.",
-        name: "Managers"
-    },
-    {
-        type: 'input',
-        message: "You will have one Engineer:",
-        name: "Engineers"
-    }
-]
 
-replace()
+function start() {
+
+    function createManager()
+    inquirer
+        .prompt([{
+            type: "list",
+            message: "What is the name of your manager?",
+            name: "manager"
+        }])
 
 
-inquirer
-    .prompt(questions)
+
+    const manager = new Manager(name, id, email, github)
 
 
-    .then(function ({ username, JohnDoe, BillNye }) {
-        // console.log(answers)
-        const queryUrl = `https://api.github.com/users/${username}`;
 
-        axios.get(queryUrl).then(function (res) {
-            console.log(res.data)
+}
 
-        })
-    })
+function createEmployee() {
+    //prompt amnd ask to create an engineer or intern
+    // based on user input, call function
+    //if input id "donr", build team
+}
+
+function createEngineer() {
+
+}
+
+function createIntern() {
+
+}
+
+function buildTeam() {
+    // call render
+    // write result to file
+}
+
+}
 
 
 // After the user has input all employees desired, call the `render` function (required
